@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qr code</title>
+     <script src='https://kit.fontawesome.com/9603c04a31.js' crossorigin='anonymous'></script>
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Audiowide|Inter|Atma|Poppins|Montserrat' />
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+    <div id="sections">
+ <div id="generate-page" class="page">
+<div> <h1>Qr Code Generator</h1>
+    <p>Simple,Fast and FREE!</p></div>
+    <form id="form">
+<textarea name="" id="input" placeholder="Your Text | Link | Phone no"></textarea>
+    <button type="submit" id="gen"><i class="fa-solid fa-wand-magic-sparkles"></i> <span>Generate</span> </button> 
+    </form>
+    <div id="options-holder">
+        <div class="options">
+            <label for="size">Size:</label>
+            <select id="size">
+                <option value="100x100">100x100</option>
+                 <option value="150x150">150x150</option>
+                <option value="200x200" selected>200x200</option>
+                 <option value="250x250">250x250</option>
+                 <option value="300x300">300x300</option>
+            </select>
+        </div>
+        <div class="options">
+            <label for="format">Format:</label>
+            <select id="format">
+                <option value="png">png</option>
+            <option value="gif">gif</option>
+            <option value="jpeg">jpeg</option>
+            <option value="jpg">jpg</option>
+            <option value="svg">svg</option>
+            <option value="eps">eps</option>
+            </select>
+        </div>
+        <div class="options">
+            <label for="color">Color:</label>
+            <input type="color" id="color" value="#0a0db8">
+        </div>
+ <div class="options">
+     <label for="bgcolor">Bgcolor:</label>
+     <input type="color" id="bgcolor" value="#e1e1f5">
+ </div>
+    </div>
+
+   
+    </div>
+
+    <!-- scan-page -->
+
+    <div id="scan-page" class="page">
+<h1>Qr Code Scanner</h1>
+    <form id="form-scan">
+<input name="file" id="file-input" type="file">
+    <button type="submit" id="scan-btn"><i class="fa-solid fa-camera"></i> <span>Scan</span> </button> 
+    </form>
+    <textarea type="text" disabled placeholder="Output Here" id="scanOutput"></textarea>
+    </div>
+   
+    <!-- nav-bar -->
+    <nav>
+        <div id="nav-links">
+ <div class="nav-item active" id="generate-btn" onclick="switchPage(this)">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>Generate</span>
+        </div>
+        <div class="nav-item" onclick="switchPage(this)" id="scan-btn">
+            <i class="fa-solid fa-camera"></i>
+            <span>Scan</span>
+        </div>
+        </div>
+       
+    </nav>
+     <div id="output-div">
+        <span id="genNew"><i class="fa-solid fa-chevron-left"></i> <span>Back</span></span>
+       <div id="image-holder" class="card">
+
+        </div>
+        <p id="analysis">Your Qr code is being generated</p> 
+        <button type="button" onclick="downloadFile()"><i class="fa-solid fa-download"></i> <span>Download</span></button>
+    </div>
+    <script src="script.js">
+       
+    </script>
+</body>
+</html>
